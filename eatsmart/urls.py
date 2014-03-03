@@ -19,5 +19,6 @@ urlpatterns = patterns('',
     (r'^api/', include(v1_api.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+# we need to add the root folder for local debugging to allow the django dev server to serve index.html
 if settings.DEBUG:
     urlpatterns += static('/', document_root=settings.PROJECT_ROOT)
