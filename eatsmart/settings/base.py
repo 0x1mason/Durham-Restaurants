@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'compressor',
     'tastypie',
     'leaflet',
+    'users',
     # Internal apps
     'inspections',
     'eatsmart',
