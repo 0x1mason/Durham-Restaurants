@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load humanize %}
-
+{% load establishmentdetailstags %}
 {% block content %}
 <h2>{{ establishment }}</h2>
 
@@ -11,9 +11,10 @@
         {% endif %}
     </div>
     <div class='col-md-6'>
-        <h3>{{establishment.premise_address1}}<br/>
-            {% if establishment.premise_address2 and establishment.premise_address2 != '0' %} {{establishment.premise_address2}}<br/>{%endif%}
-            {{establishment.premise_city}},{{establishment.premise_state}} {{establishment.premise_zip}}
+        <h3>
+            {{establishment.premise_address1|title }}<br/>
+            {% if establishment.premise_address2 and establishment.premise_address2 != '0' %} {{establishment.premise_address2|title }}<br/>{%endif%}
+            {{establishment.premise_city|title }}, {{establishment.premise_state }} {{establishment.premise_zip }}
         </h3>
     </div>
 </div>
@@ -28,17 +29,7 @@
             </a>
         </div>
         <div id="collapse{{ forloop.counter }}" class="accordion-body collapse">
-            <div class="accordion-inner">
-                <table class="table table-striped">
-                    <tbody>
-                    {% for key, value in inspection.dump.items %}
-                    <tr>
-                        <td>{{ key }}</td><td>{{ value }}</td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+            {% details_to_table inspection %}
         </div>
         {% endfor %}
     </div>

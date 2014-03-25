@@ -10,6 +10,10 @@ body > .container {
   margin: 20px 0;
 }
 
+.detail-value {
+  padding-left: 25px;
+}
+
 .badge-date {
  font-size: 62.5%;
 }
@@ -113,3 +117,4 @@ form#search {
     border-bottom: 0;
   }
 }
+

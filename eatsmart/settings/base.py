@@ -113,6 +113,7 @@ WSGI_APPLICATION = 'eatsmart.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates'),
+    os.path.join(PROJECT_PATH, 'templates/templatetags'),
 )
 
 FIXTURE_DIRS = (
@@ -136,6 +137,8 @@ INSTALLED_APPS = (
     'leaflet',
     # Internal apps
     'inspections',
+    'eatsmart',
+    'eatsmart.templates',
     'users'
 )
 
