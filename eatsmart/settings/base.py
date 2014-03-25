@@ -138,8 +138,6 @@ INSTALLED_APPS = (
     'users',
     # Internal apps
     'inspections',
-    'eatsmart',
-    'eatsmart.templates',
     'users'
 )
 
